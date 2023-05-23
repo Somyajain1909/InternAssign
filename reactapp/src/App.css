@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+.output{
+  height: 80px;
+}
+input{
+  height: 35px;
+}
+.curr{
+  width:'200px'
+}
