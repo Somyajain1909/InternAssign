@@ -1,11 +1,11 @@
 
 import './App.css';
-import Calci from './components/Calci';
+import Homepage from './pages/Homepage';
 
 function App() {
   return (
-    <div className="App">
-     <Calci/>
+    <div>
+     <Homepage/>
     </div>
   );
 }
