@@ -59,8 +59,8 @@ useEffect(()=>{
       setCurrency("Dollar")
     }
   return (
-    <div>
-      <h2>Enter INR value here</h2>
+    <div className='mx-3 my-3'>
+      <h1>Enter cost here</h1>
       <div className='input'>
         <input  type='text' name='inr' className='my-3' onChange={onChange} /> &nbsp;
   <button class="btn btn-secondary dropdown-toggle curr" style={{'width':'180px'}} type="button" data-bs-toggle="dropdown"  aria-expanded="false">
@@ -73,11 +73,14 @@ useEffect(()=>{
   </ul>
 
       </div>
-      <div className='output' name='dph'>
+      <div className='output'  name='dph'>
         <br/>
-        <p>Ans={DPH}</p>
+        <p >Ans= <b >{DPH}</b></p>
       </div>
-      <button type='submit' className="btn btn-primary" onClick= {() => { onClick()}}>Convert</button>
+
+      <br/>
+      
+      <button type='submit' style={{'marginLeft':'24%'}} className="btn btn-primary" onClick= {() => { onClick()}}>Calculate</button>
       
     </div>
   )
