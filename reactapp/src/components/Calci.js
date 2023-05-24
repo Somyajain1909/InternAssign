@@ -21,7 +21,8 @@ const Calci = () => {
             setDPH(ans);
         }
         else{
-            setDPH(input)
+          let output=input/2080;
+            setDPH(output)
         }
         
     }
