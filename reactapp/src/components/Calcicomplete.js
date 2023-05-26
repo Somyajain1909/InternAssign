@@ -153,7 +153,7 @@ const currencyisINR=async ()=>{
     
    
     </div>
-
+<hr/>
     </div>
     </div>
   )
