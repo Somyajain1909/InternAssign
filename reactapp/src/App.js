@@ -9,7 +9,7 @@ import Navbar from './components/Navbar'
 function App() {
   const[numCalci,setNumCalci]=useState([1]);
   const[overhead,SetOverhead]=useState();
-  const[curr_rate,setCurr_rate]=useState(82.80)
+  const[curr_rate,setCurr_rate]=useState(80)
   const addCalci=()=>{
     let num=numCalci.length+1;
    setNumCalci(numCalci.concat(num));
@@ -38,7 +38,7 @@ function App() {
         
         
         let value=ans.rates.INR;
-        console.log(value)
+        
         setCurr_rate(value)
     } catch (error) {
         console.error(error);
@@ -47,7 +47,7 @@ function App() {
 }
 useEffect(()=>{
 updateCurrRate();
-})
+},[])
 const [mode, setMode] = useState('light');
 const toggleMode = ()=>{
   if(mode === 'dark'){
@@ -72,10 +72,10 @@ const toggleMode = ()=>{
 
     <span className="input-group-text" style={{'color':'white','backgroundColor':'#0E7680','borderColor':'#0E7680','marginLeft':'9px','borderTopLeftRadius':'3px','borderBottomLeftRadius':'3px'}}>Enter custom conversion rate
     (optional)</span>
-  <input type="text" onChange={onChangeCR} style={{"height":"40px",'borderRadius':'3px','color':'black','marginRight':'9px','borderTopRightRadius':'3px','borderBottomRightRadius':'3px'}}  className="form-control" placeholder="Server" aria-label="Server"/>
+  <input type="text" onChange={onChangeCR} style={{"height":"40px",'borderRadius':'3px','color':'black','marginRight':'9px','borderTopRightRadius':'3px','borderBottomRightRadius':'3px'}}  className="form-control" placeholder="Exchange rate" aria-label="Exchange rate"/>
   &nbsp; &nbsp;
   <span style={{'color':'white','backgroundColor':'#0E7680','borderColor':'#0E7680','marginLeft':'9px','borderTopLeftRadius':'3px','borderBottomLeftRadius':'3px'}} className="input-group-text">Enter Overhead %</span>
-    <input type="text" style={{"height":"40px",'width':'2px','borderRadius':'3px','color':'black','marginRight':'9px','borderTopRightRadius':'3px','borderBottomRightRadius':'3px'}} value={overhead}  onChange={onChangeOverhead} className="form-control"  placeholder="Enter overhead percentage" aria-label="overhead"/>
+    <input type="text" style={{"height":"40px",'width':'2px','borderRadius':'3px','color':'black','marginRight':'9px','borderTopRightRadius':'3px','borderBottomRightRadius':'3px'}} onChange={onChangeOverhead} className="form-control"  placeholder="Enter overhead percentage" aria-label="overhead"/>
 </div>
 <p style={{'color':'#0E7680','marginLeft':'50%','fontWeight':'bolder'}}>(To be updated before calculations)</p>
     </div>
